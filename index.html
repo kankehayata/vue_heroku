@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TeamLabStore</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h3>teamlabstore</h3>
+        <div v-for="result in results">
+              {{ result.id}}
+              {{ result.name }}
+              {{ result.contents }}
+              {{ result.price}}
+              <a href="edit.html">編集</a>
+        </div>
+    </div>
+    <a href="new.html">新規作成</a>
+    <a href="search.html">検索</a>
+    <script src="index.js"></script>
+  </body>
+</html>

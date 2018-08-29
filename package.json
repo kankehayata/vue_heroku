@@ -1,0 +1,11 @@
+{
+  "name": "vue_store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.html",
+  "scripts": {
+    "start": "browser-sync --server --watch '**/*'"
+  },
+  "author": "",
+  "license": "ISC"
+}
