@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.html",
   "scripts": {
-    "start": "browser-sync --server --watch '**/*'"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC"
