@@ -16,7 +16,7 @@ var vm = new Vue({
   },
   methods: {
     get_posts: function(){
-      axios.get("http://localhost:3000/posts")
+      axios.get("https://knkhyt-practice-store.herokuapp.com/posts")
       .then((response) => {
         this.posts = response.data;
       })
@@ -26,7 +26,7 @@ var vm = new Vue({
     },
     post_post: function(){
       console.log("test")
-      axios.post("http://localhost:3000/posts",{
+      axios.post("https://knkhyt-practice-store.herokuapp.com/posts",{
           name: this.new_post_name,
           contents: this.new_post_contents,
           price: this.new_post_price
@@ -44,7 +44,7 @@ var vm = new Vue({
     },
     delete_post: function(id){
       console.log(id);
-      axios.delete(`http://localhost:3000/posts/${id}`)
+      axios.delete(`https://knkhyt-practice-store.herokuapp.com/posts/${id}`)
         .then((response) => {
           this.get_posts();
         })
@@ -53,7 +53,7 @@ var vm = new Vue({
         });
     },
     search_post: function(){
-      axios.post("http://localhost:3000/posts/search",{
+      axios.post("https://knkhyt-practice-store.herokuapp.com/posts/search",{
         name: this.search_name
       })
         .then((response) => {
@@ -68,7 +68,7 @@ var vm = new Vue({
     edit_post: function(){
       var id = this.edit_id;
       console.log(id);
-      axios.get(`http://localhost:3000/posts/${id}/edit`)
+      axios.get(`https://knkhyt-practice-store.herokuapp.com/posts/${id}/edit`)
         .then((response) => {
           this.edit_name = response.data.name;
           this.edit_contents = response.data.contents;
@@ -81,7 +81,7 @@ var vm = new Vue({
     update_post: function(){
       var present_id = this.edit_id;
       console.log(present_id);
-      axios.patch(`http://localhost:3000/posts/${present_id}`,{
+      axios.patch(`https://knkhyt-practice-store.herokuapp.com/posts/${present_id}`,{
         id: this.edit_id,
         name: this.edit_name,
         contents: this.edit_contents,
