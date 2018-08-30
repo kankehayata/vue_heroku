@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.html",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.html"
   },
   "author": "",
   "license": "ISC"
