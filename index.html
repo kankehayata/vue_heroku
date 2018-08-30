@@ -9,16 +9,36 @@
   <body>
     <div id="app">
       <h3>teamlabstore</h3>
-        <div v-for="result in results">
-              {{ result.id}}
-              {{ result.name }}
-              {{ result.contents }}
-              {{ result.price}}
-              <a href="edit.html">編集</a>
-        </div>
+      <div v-for="post in posts">
+            {{ post.id}}
+            {{ post.name }}
+            {{ post.contents }}
+            {{ post.price}}
+            <button v-on:click="delete_post(post.id)">X</button>
+      </div><br>
+      <form v-on:submit.prevent="post_post">
+        <input  type="text" v-model="new_post_name" placeholder="商品名">
+        <input  type="text" v-model="new_post_contents" placeholder="内容">
+        <input  type="number" v-model="new_post_price" placeholder="価格（半角）">
+        <input  type="submit" value="作成"><br>
+      </form><br>
+      <form v-on:submit.prevent="edit_post">
+        <select v-model="edit_id">
+          <option v-for="post in posts">{{ post.id }}</option>
+        </select>
+        <input type="submit" value="編集">
+      </form>
+      <form v-on:submit.prevent="update_post">
+        <textarea v-model="edit_name">{{ edit_name }}</textarea>
+        <textarea v-model="edit_contents">{{ edit_contents }}</textarea>
+        <textarea v-model="edit_price">{{ edit_price }}</textarea>
+        <input type="submit" value="保存">
+      </form>
+      <form v-on:submit.prevent="search_post">
+        <input type="text" v-model="search_name" placeholder="商品名">
+        <input type="submit" value="検索">
+      </form>
     </div>
-    <a href="new.html">新規作成</a>
-    <a href="search.html">検索</a>
-    <script src="index.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
