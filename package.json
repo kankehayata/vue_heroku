@@ -4,8 +4,11 @@
   "description": "",
   "main": "app.html",
   "scripts": {
-    "start": "node app.html"
+    "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
